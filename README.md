@@ -29,14 +29,31 @@ The location of service providers is shown on a map using MapBox API.
 
 ## Screenshots
 ### Homepage :
+![Screenshot (144)](https://github.com/tarunparmar752/Helping-Hands/assets/81980532/0e51c642-2149-4268-afac-85d54fdfe867)
+
 
 ### Services Page :
+![Screenshot (145)](https://github.com/tarunparmar752/Helping-Hands/assets/81980532/bf4694c5-4edd-4187-a97a-762bd3512947)
+![Screenshot (146)](https://github.com/tarunparmar752/Helping-Hands/assets/81980532/2e84571e-a9eb-485a-be90-03df620bcd19)
+
+### Service Page :
+![Screenshot (147)](https://github.com/tarunparmar752/Helping-Hands/assets/81980532/0bb3f23e-4afd-4d64-950e-5b77de844dda)
+
+
+
 
 ### Profile Page :
+![Screenshot (151)](https://github.com/tarunparmar752/Helping-Hands/assets/81980532/c33742b9-552d-4d2b-9a8d-56dc145abf4d)
+
 
 ### Add Services Form:
+![Screenshot (150)](https://github.com/tarunparmar752/Helping-Hands/assets/81980532/682fb64b-0316-47b6-9d8b-ae6431923d67)
+
 
 ### Registration & Login Form:
+![Screenshot (148)](https://github.com/tarunparmar752/Helping-Hands/assets/81980532/ac44234b-95e1-4d1f-9c51-48b65501a6f0)
+![Screenshot (149)](https://github.com/tarunparmar752/Helping-Hands/assets/81980532/37b80a62-3236-4168-ae5f-fb96e4bd89a9)
+
 
 
 ## Technologies Used
