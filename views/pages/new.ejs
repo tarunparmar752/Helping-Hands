@@ -1,0 +1,65 @@
+<%- layout('boilerplate/boilerplate') %>
+
+  
+  <div class="col-md-6 offset-md-3 mt-3" style="height: 80vh;">
+    <h1 class="text-center">New Service</h1>
+    <form action="/services_register" method="POST" class="validated-form" enctype="multipart/form-data"  novalidate>
+
+      <div class="mb-3">
+              <label for="service" class="form-label">Service</label>
+                 <select class="form-select" name="service" id="service" aria-label="Default select example" required>
+                    <option value="">None</option>
+                    <option value="gardener">Gardener</option>
+                    <option value="plumber">Plumber</option>
+                    <option value="electrician">Electrician</option>
+                    <option value="house_maid">House Maid</option>
+                    <option value="mason">Mason</option>
+                    <option value="driver">Driver</option>
+                </select>
+               <div class="valid-feedback">
+                 Looks good!
+              </div>
+            </div>     
+
+      <div class="mb-3">
+        <label class="form-label" for="text">Description</label>
+        <input
+          class="form-control"
+          type="text"
+          id="text"
+          name="text"
+          required
+        />
+         <div class="valid-feedback">Looks good!</div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label" for="charges">Charges per Day</label>
+        <div class="input-group">
+          <span class="input-group-text" id="price-label">&#8377</span>
+          <input
+            type="text"
+            class="form-control"
+            id="charges"
+            placeholder="0.00"
+            aria-label="charges"
+            aria-describedby="price-label"
+            name="charges"
+            required
+          />
+        </div>
+      </div>
+
+        <div class="mb-3">
+         <label for="image">Upload Images</label>
+             <div class="input-group mb-3">
+                <input type="file" class="form-control" id="image" name="image" multiple>
+                <label class="input-group-text" for="image">Upload</label>
+            </div>
+        </div>
+      <div class="mb-3">
+        <button class="btn btn-success">Add Service</button>
+      </div>
+    </form>
+    <a href="/services"><button class="btn btn-link">All Services</button></a>
+  </div>

@@ -1,0 +1,66 @@
+<%- layout('boilerplate/boilerplate') %>
+  
+  <div class="col-md-6 offset-md-3 mt-3" style="height: 80vh;">
+    <h1 class="text-center">Edit Service</h1>
+    <form
+      action="/profile/<%= service._id %>?_method=PUT"
+      method="POST"
+      novalidate
+      class="validated-form"
+    >
+
+      <div class="mb-3">
+              <label for="service" class="form-label">Service</label>
+                 <select class="form-select" name="service" id="service" aria-label="Default select example" required>
+                    <option value="<%= service.service %>"><%= service.service %></option>
+                    <option value="gardener">Gardener</option>
+                    <option value="plumber">Plumber</option>
+                    <option value="electrician">Electrician</option>
+                    <option value="house_maid">House Maid</option>
+                    <option value="mason">Mason</option>
+                    <option value="driver">Driver</option>
+                </select>
+               <div class="valid-feedback">
+                 Looks good!
+              </div>
+        </div>   
+
+      <div class="mb-3">
+        <label class="form-label" for="charges">Charges</label>
+        <div class="input-group">
+          <span class="input-group-text" id="price-label">&#8377</span>
+          <input
+            type="text"
+            class="form-control"
+            value="<%= service.charges %>"
+            id="charges"
+            placeholder="0.00"
+            aria-label="price"
+            aria-describedby="price-label"
+            name="charges"
+            required
+          />
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label" for="text">Description</label>
+        <textarea
+          class="form-control"
+          type="text"
+          id="text"
+          name="text"
+          required
+        >
+<%= service.text %></textarea
+        >
+        <div class="valid-feedback">Looks good!</div>
+      </div>
+          
+      
+      <div class="mb-3">
+        <button class="btn btn-success ">Update Service</button>
+      </div>
+    </form>
+    <a href="/profile/<%= service._id %>"><button class="btn btn-link">Back to Service profile</button></a>
+  </div>

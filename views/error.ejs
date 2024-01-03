@@ -1,0 +1,18 @@
+<% layout("boilerplate/boilerplate") %>
+<div class="container mt-2 mb-2">
+  <div class="row m-2">
+    <div class="col-8 offset-2">
+      <div class="card text-center">
+        <div class="card-header"><h3> Oops!!!<%= error.message %></h3></div>
+        <img
+          src="/images/error.jpg"
+          class="card-img-top errorPic"
+          alt="error Image"
+        />
+        <div class="card-body">
+          <div class="card-footer text-muted"><p><%= error.stack %></p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

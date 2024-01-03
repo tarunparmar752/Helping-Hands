@@ -1,0 +1,110 @@
+<% layout('boilerplate/boilerplate') %>
+<div class="container justify-content-center align-items-center mt-3 mb-3 p-4 pt-0">
+  <div class="row justify-content-md-center rounded-3 border m-4 p-4 ">
+    <div class="col-12 col-md-6  m-0 p-0">
+      <div class="card border-0 m-0 p-0 register"  >
+        <div class="card-body m-2">
+          <form action="/register" method="post"  class="needs-validation" novalidate>
+            <h1 class="text-center">Register</h1>
+            <div class="mb-3">
+              <label for="name" class="form-label"
+                >Name</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="name"
+                name="name"
+                autofocus
+                required
+              />
+              <div class="valid-feedback">
+                 Looks good!
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="username" class="form-label"
+                >Username</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="username"
+                name="username"
+                required
+              />
+              <div class="valid-feedback">
+                 Looks good!
+              </div>
+            </div>
+            
+            <div class="mb-3">
+              <label for="mobile" class="form-label"
+                >Mobile Number</label
+              >
+              <input
+                type="number"
+                class="form-control"
+                id="mobile"
+                name="mobile"
+                aria-describedby="mobile"
+                required
+              />
+             <div id="mobile" class="form-text">Kindly enter mobile number</div>
+               <div class="valid-feedback">
+                 Looks good!
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="location" class="form-label"
+                >Location</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="location"
+                name="location"
+                aria-describedby="location"
+                required
+              />
+             <div id="mobile" class="form-text">Kindly enter your location</div>
+               <div class="valid-feedback">
+                 Looks good!
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="password" class="form-label"
+                >Password</label
+              >
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                name="password"
+                required
+              />
+               <div class="valid-feedback">
+                 Looks good!
+              </div>
+            </div>
+            <button class="btn btn-primary">Submit</button>
+             <p>Already Registered?<a href="/login">  Login</a></p>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-6 m-0 p-0 register">
+    <div class="card border-0" >
+       <img src="images/plumber.png" class="card-img-top registerPic" alt="...">
+       <div class="card-body m-4">
+       <p class="card-text">Welcome to HelpingHands, your one-stop destination for reliable and efficient assistance with household chores, gardening, driving, and more. Our user-friendly platform connects you with skilled and trustworthy helpers, ensuring that you can easily find the support you need for a range of tasks.</p>
+     </div>
+    </div>
+    
+      
+     </div>
+    </div>
+  </div>
+</div>

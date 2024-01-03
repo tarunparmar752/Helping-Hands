@@ -1,0 +1,36 @@
+<% layout('boilerplate/boilerplate') %>
+
+<div class="container">
+  <div class="row mt-2">
+        <div id="map" style='width: 100%; height: 500px;'></div>
+        <h1 class="text-center"><%= id.toUpperCase() %></h1>
+        <% for (serviceWorker of serviceWorkers) { %>
+        <div class="col-12 col-md-6 col-lg-auto m-2">
+            <a href="/profile/<%= serviceWorker._id %>">
+                <div class="card" style="width: 18rem;">
+                 <img
+                        src="<%= serviceWorker.image %>"
+                        class="card-img-top indServiceImg"
+                         alt="..."
+                     />
+                    <div class="card-body">
+                       <h6 class="card-subtitle mb-2 text-muted"><%= serviceWorker.author.name %></h6>
+                        <p class="card-text"><%= serviceWorker.text %></p>
+                        <p class="card-text"><%= serviceWorker.author.location %></p>
+                     </div>
+                    <div class="card-footer text-muted">
+                        From: &#8377 <%= serviceWorker.charges %> per day
+                    </div>
+                </div>
+            </a>
+    
+        </div>
+    <% } %>
+  </div>
+</div>
+ 
+<script>
+    const mapToken ="<%- process.env.MAP_BOX_TOKEN %>";
+    const user = { features : <%- JSON.stringify(serviceWorkers)%>} ;
+</script>
+<script src="/javascript/clusterMap.js"></script>

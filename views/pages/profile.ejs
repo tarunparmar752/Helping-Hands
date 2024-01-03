@@ -1,0 +1,48 @@
+<% layout('boilerplate/boilerplate') %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-6 mt-4 mb-4 ">
+      <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src=<%= service.image ? service.image : '/images/plumber.png' %>
+            class="d-block w-100 profileImg" alt="..." />
+          </div>
+        </div>
+      </div>
+      <div class="card ">
+        <div class="card-header fw-bolder text-center"><%= service.service.toUpperCase() %></div>
+        <div class="card-body">
+          <h5 class="card-title"><%= service.author.name %></h5>
+          <p class="card-text"><%= service.text %></p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Mobile : <%= service.author.mobile %></li>
+          <li class="list-group-item">Charges &#8377 <%= service.charges %> per day</li>
+          <li class="list-group-item"> <%= service.author.location %> </li>
+        </ul>
+        <% if(currentUser && service.author.equals(currentUser._id)) { %>
+       <div class="card-body">
+         <a href="/profile/<%= service._id %>/edit" class="card-link btn btn-warning">Edit</a>
+         <form class="d-inline" action="/profile/<%= service._id%>?_method=DELETE" method="POST">
+           <button class="btn btn-danger">Delete</button>
+         </form>
+       </div>
+       <% } %>
+      </div>
+    </div>
+    <div class="col-6 mt-4 mb-4">
+        <div id='map' style='width: 700px; height: 500px;'></div>
+        <!-- <p><%= service.geometry.coordinates %></p> -->
+    </div>
+      
+  </div>
+</div>
+
+<script>
+    const mapToken ="<%- process.env.MAP_BOX_TOKEN %>";
+    const user = <%- JSON.stringify(service) %>;
+</script>
+
+<script src="/javascript/showMap.js"></script>

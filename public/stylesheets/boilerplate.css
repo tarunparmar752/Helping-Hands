@@ -1,0 +1,43 @@
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.imgCarousel {
+  max-height: 85vh;
+  height: 100%;
+  width: 100%;
+  filter: brightness(80%);
+  background-size: cover;
+  background-position: center;
+}
+
+.servicesImg {
+  max-height: 40vh;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.indServiceImg {
+  max-height: 200px;
+  height: 25vh;
+  object-fit: cover;
+}
+
+.servicesBody {
+  z-index: 99;
+  color: black;
+}
+
+.profileImg{
+  filter: brightness(80%);
+  max-height: 50vh;
+  height: auto;
+
+}
+
+.loginImg{
+   max-height: 400px;
+}
