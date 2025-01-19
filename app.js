@@ -10,11 +10,13 @@ const passport = require("passport");
 const localStrategy = require("passport-local");
 const mbxGeocoding = require("@mapbox/mapbox-sdk/services/geocoding");
 const mapBoxToken = process.env.MAP_BOX_TOKEN; 
+const dbUrl = process.env.MONGODB_URL; 
 const geocoder = mbxGeocoding({ accessToken: mapBoxToken });
 const multer = require("multer");
 const { storage } = require("./cloudinary/cloudinary");
 const upload = multer({ storage });
 const bodyParser = require("body-parser");
+const crypto = require("crypto");
 
 
 
@@ -64,7 +66,7 @@ passport.deserializeUser(User.deserializeUser());
 
 const db = mongoose.connection;
 
-mongoose.connect("mongodb://127.0.0.1:27017/helpingHand");
+mongoose.connect(dbUrl);
 
 db.on("error", console.error.bind(console, "connection error:"));
 
@@ -159,7 +161,7 @@ app.post("/register", async(req, res) =>{
   const registeredUser = await User.register(user,password);
   req.login(registeredUser, (err) => {
     if (err) return next(err);
-    req.flash("success", "Welcome to Helpinh Hands!");
+    req.flash("success", "Welcome to Helping Hands!");
     res.redirect("/services");
   });
  } catch(e) {
@@ -189,6 +191,15 @@ app.get("/logout", (req, res) => {
     res.redirect("/services");
   });
 });
+
+  app.get("/key",async(req,res)=>{
+    
+
+    // Generate a random 16-byte IV key
+    const ivKey = crypto.randomBytes(16).toString("base64");
+
+    console.log(`IV_KEY=${ivKey}`);
+  })
 
 app.get("/profile/:id", async (req, res) => {
   const { id } = req.params;
